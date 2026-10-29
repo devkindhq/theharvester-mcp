@@ -1,10 +1,9 @@
-# theHarvester MCP Server — OSINT email and subdomain discovery for AI agents
+# theHarvester MCP Server: OSINT email and subdomain discovery for AI agents
 
 theHarvester MCP Server wraps [theHarvester](https://github.com/laramies/theHarvester) in a
 [Model Context Protocol](https://modelcontextprotocol.io) server so Claude Code, Cursor, or any
 MCP client can harvest public emails, subdomains, hostnames, IPs, and LinkedIn profiles for a
-domain on demand. It ships as a multi-arch Docker image (`linux/amd64` and `linux/arm64`), runs
-over stdio, and needs no API keys for its default free sources.
+domain on demand. Multi-arch Docker image, stdio transport, no API keys for the default free sources.
 
 It is built for lead generation and prospecting: ask your agent "find public contacts for
 example.com" and it calls the `harvest` tool, which fans out to sources like crtsh,
@@ -89,5 +88,7 @@ responsible for misuse.
 
 ## License and contributing
 
-[MIT](LICENSE) © Devkind. Issues and PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) and
-[SECURITY.md](SECURITY.md). Built by [Devkind](https://github.com/devkindhq).
+[MIT](LICENSE) © Devkind. Issues and PRs welcome, see [CONTRIBUTING.md](CONTRIBUTING.md) and
+[SECURITY.md](SECURITY.md).
+
+Built by [Devkind](https://devkind.com.au). Maintained by Kazim Ali.
