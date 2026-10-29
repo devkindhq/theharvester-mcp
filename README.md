@@ -1,14 +1,15 @@
 # theHarvester MCP Server — OSINT email and subdomain discovery for AI agents
 
 theHarvester MCP Server wraps [theHarvester](https://github.com/laramies/theHarvester) in a
-[Model Context Protocol](https://modelcontextprotocol.io) server, so Claude Code, Cursor, or any
+[Model Context Protocol](https://modelcontextprotocol.io) server so Claude Code, Cursor, or any
 MCP client can harvest public emails, subdomains, hostnames, IPs, and LinkedIn profiles for a
 domain on demand. It ships as a multi-arch Docker image (`linux/amd64` and `linux/arm64`), runs
 over stdio, and needs no API keys for its default free sources.
 
-Built for lead generation and prospecting: ask your agent "find public contacts for example.com"
-and it calls the `harvest` tool, which fans out to sources like crtsh, hackertarget, urlscan, and
-DuckDuckGo, then returns structured JSON.
+It is built for lead generation and prospecting: ask your agent "find public contacts for
+example.com" and it calls the `harvest` tool, which fans out to sources like crtsh,
+hackertarget, urlscan, and DuckDuckGo, then returns structured JSON. Harvests run asynchronously
+with configurable concurrency and timeouts, and results stay retrievable by harvest ID.
 
 ## Quick start
 
@@ -61,7 +62,9 @@ Tool call: `harvest` with `{"domain": "example.com", "sources": "free"}`
 }
 ```
 
-Output is illustrative; real counts depend on the target domain and source availability.
+Output is illustrative; real counts depend on the target domain and source availability. The
+`harvest` tool accepts `domain` (required), `sources` (`free`, `all`, or a comma-separated
+list), `limit`, and `timeout`; invalid domains are rejected before any network call.
 
 ## Configuration
 
@@ -82,6 +85,7 @@ responsible for misuse.
 - [ ] MCP Registry listing (`server.json` + publisher CLI)
 - [ ] Optional Smithery / Glama listings
 - [ ] Pinned theHarvester version releases alongside `latest`
+- [ ] CI workflow building and pushing the multi-arch image on tag
 
 ## License and contributing
 
