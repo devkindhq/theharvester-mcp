@@ -21,7 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 # Install theHarvester (requires Python >=3.14; uv fetches a managed interpreter)
-RUN git clone --depth 1 https://github.com/laramies/theHarvester.git /opt/theharvester && \
+ARG THEHARVESTER_VERSION=4.11.1
+RUN git clone --depth 1 --branch ${THEHARVESTER_VERSION} https://github.com/laramies/theHarvester.git /opt/theharvester && \
     cd /opt/theharvester && \
     uv sync --no-dev
 RUN apt-get purge -y --auto-remove git curl && rm -rf /var/lib/apt/lists/*

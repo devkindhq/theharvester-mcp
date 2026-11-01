@@ -181,8 +181,8 @@ responsible for misuse.
 
 - [x] Official MCP Registry listing (`io.github.devkindhq/theharvester-mcp`)
 - [ ] Docker MCP Registry, Smithery and Glama listings
-- [ ] Pinned theHarvester version releases alongside `latest`
-- [ ] CI workflow building and pushing the multi-arch image on tag
+- [x] Pinned theHarvester version releases alongside `latest` (`devkind/theharvester-mcp:<version>` is built with theHarvester 4.11.1, `latest` tracks the newest release)
+- [x] CI workflow building and pushing the multi-arch image on tag (untested until the first tag)
 
 ## License and contributing
 

@@ -8,11 +8,11 @@
     "url": "https://github.com/devkindhq/theharvester-mcp",
     "source": "github"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "packages": [
     {
       "registryType": "oci",
-      "identifier": "docker.io/devkind/theharvester-mcp:1.0.0",
+      "identifier": "docker.io/devkind/theharvester-mcp:1.0.1",
       "transport": {
         "type": "stdio"
       },
