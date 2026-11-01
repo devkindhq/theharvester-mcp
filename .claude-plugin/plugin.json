@@ -1,0 +1,10 @@
+{
+  "name": "theharvester",
+  "version": "1.1.0",
+  "description": "OSINT harvesting MCP server (multi-arch Docker) plus the harvester agent skill — emails, subdomains, hosts, IPs and LinkedIn profiles for prospecting and security research.",
+  "author": { "name": "Devkind", "url": "https://devkind.com.au" },
+  "license": "MIT",
+  "homepage": "https://github.com/devkindhq/theharvester-mcp",
+  "repository": "https://github.com/devkindhq/theharvester-mcp",
+  "keywords": ["theharvester", "osint", "mcp", "mcp-server", "lead-generation", "prospecting", "recon", "claude-skills", "docker"]
+}
