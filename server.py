@@ -21,7 +21,7 @@ from typing import Any
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
 from mcp.types import Resource, TextContent, Tool
-from pydantic import BaseModel, Field
+from pydantic import AnyUrl, BaseModel, Field
 from pydantic_settings import BaseSettings
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -314,7 +314,8 @@ async def list_resources() -> list[Resource]:
 
 
 @app.read_resource()
-async def read_resource(uri: str) -> str:
+async def read_resource(uri: AnyUrl) -> str:
+    uri = str(uri)
     if uri.startswith("harvest://results/"):
         hid = uri.replace("harvest://results/", "")
         result = harvest_results.get(hid)

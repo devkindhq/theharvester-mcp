@@ -170,7 +170,7 @@ Environment variables: `THEHARVESTER_TIMEOUT` (default 120s), `THEHARVESTER_MAX_
 
 ## Claude Code skill
 
-This repo ships a skill at [`skills/harvester/SKILL.md`](skills/harvester/SKILL.md`). When the
+This repo ships a skill at [`skills/harvester/SKILL.md`](skills/harvester/SKILL.md). When the
 repo is used as a Claude Code plugin source (or skills directory), the skill is auto-discovered
 and teaches the agent when and how to run OSINT harvests — tool names (`harvest`,
 `get_harvest_results`, `list_active_harvests`, `list_sources`), recommended sources, and the
@@ -188,7 +188,7 @@ responsible for misuse.
 ## Roadmap
 
 - [x] Official MCP Registry listing (`io.github.devkindhq/theharvester-mcp`)
-- [ ] Docker MCP Registry, Smithery and Glama listings
+- [ ] Docker MCP Registry and Glama listings
 - [x] Pinned theHarvester version releases alongside `latest` (`devkind/theharvester-mcp:<version>` is built with theHarvester 4.11.1, `latest` tracks the newest release)
 - [x] CI workflow building and pushing the multi-arch image on tag (untested until the first tag)
 

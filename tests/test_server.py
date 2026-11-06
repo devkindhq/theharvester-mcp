@@ -128,3 +128,10 @@ def test_harvest_invalid_domain_returns_error_without_spawning(client):
     data = json.loads(text)
     assert data["status"] == "error"
     assert "Invalid domain" in data["error"]
+
+
+def test_read_unknown_resource_returns_not_found(client):
+    resp = client.request("resources/read", {"uri": "harvest://results/deadbeef"})
+    assert "error" not in resp, resp
+    data = json.loads(resp["result"]["contents"][0]["text"])
+    assert data == {"error": "Resource not found"}

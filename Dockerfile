@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     ca-certificates \
     tini \
+    procps \
     && rm -rf /var/lib/apt/lists/*
 
 # Install uv (official multi-arch image; theHarvester needs a recent uv for
